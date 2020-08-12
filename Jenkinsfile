@@ -4,7 +4,8 @@ pipeline {
     stage('Build & Test') {
       agent any
       steps {
-        sh 'mvn -Dmaven.test.failure.ignore clean package'
+        sh '''cd maven-hello-world_master
+mvn -Dmaven.test.failure.ignore clean package'''
       }
     }
 
