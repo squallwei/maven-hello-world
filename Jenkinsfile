@@ -4,8 +4,7 @@ pipeline {
     stage('Build & Test') {
       agent any
       steps {
-        sh '''cd maven-hello-world_master
-mvn -Dmaven.test.failure.ignore clean package'''
+        sh 'mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false'
       }
     }
 
